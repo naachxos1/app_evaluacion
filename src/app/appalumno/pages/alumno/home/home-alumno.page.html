@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: start;">DuocQR</ion-title>
+   <ion-buttons slot="end">
+<ion-datetime-button datetime="datetime"></ion-datetime-button>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<app-card
+  [mostrarTitulo]="false"
+  imagen="https://www.duoc.cl/wp-content/themes/wordpress-duoc-cl/images/logo-duoc.svg"
+  [mostrarBoton]="false" titulo="DuocQR" fecha="2023-2025"
+  descripcion="Fusce ac lectus sit amet sapien mattis dignissim. Donec sit amet purus sapien. Aenean vitae eros sit amet odio dignissim consequat nec sed elit. Quisque non commodo tellus, id cursus mauris. Mauris in ipsum et nunc malesuada ultrices et at odio. Phasellus ac dolor convallis, ornare justo ac, consectetur metus.">
+</app-card>
+  <div>
+    <app-card
+    [mostrarTitulo]="false"
+    imagen="https://www.duoc.cl/wp-content/uploads/2020/05/vida_estudiantil_ANTONIOIMG_4147.jpg"
+    [mostrarBoton]="false" titulo="Actualizacion2" fecha="1979-2020" descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non mauris at justo egestas ullamcorper. Pellentesque imperdiet scelerisque purus, eget convallis mi tincidunt eget. Quisque luctus bibendum quam, eu interdum nisl vulputate ac. Sed imperdiet condimentum vehicula. Integer tristique mi nulla, et pellentesque tellus volutpat nec. Sed interdum sapien sapien, vitae aliquam dolor porttitor quis. Nullam varius, felis at luctus porttitor, lectus est mollis ">
+  </app-card>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button [routerLink]="['/perfil-alumno']">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button slot="end">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-buttons slot="end">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+    </ion-buttons>
+    <ion-title>Hola!: Alumno: {{}d}</ion-title>
+  </ion-toolbar>
+</ion-footer>

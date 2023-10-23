@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ seccion.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ seccion.comentario }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      ALGUN CONTENIDO
+    </ion-card-content>
+
+  </ion-card>
+  <ion-button color="warning" [routerLink]="['/apiupdate', seccion.id]" >Actualizar</ion-button>
+  <ion-button color="danger" (click)="deleteseccion()">Eliminar</ion-button>
+</ion-content>

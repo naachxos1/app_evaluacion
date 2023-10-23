@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="textocentrado">Secciones (Cursos)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let aux of listasecciones" [routerLink]="['/secciones/', aux.id]">
+      <ion-avatar slot="end">
+        <!--<ion-img [src]="aux.imagen"></ion-img>-->
+      </ion-avatar>
+      [{{ aux.nombre }}] >>> {{ aux.tipo }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-toolbar>
+      <ion-searchbar (ionChange)="buscarseccion($event)" animated="true" placeholder="Busque la Seccion Solicitada"></ion-searchbar>
+    </ion-toolbar>
+    <ion-buttons slot="end" style="width: 20px;">
+      <ion-icon (click)="listar()" name="reload-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

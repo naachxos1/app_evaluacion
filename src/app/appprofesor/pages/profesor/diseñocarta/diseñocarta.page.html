@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>mensaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="mensaje">
+    <div *ngFor="let sa of mensaje.images">
+      <img src="{{sa.href}}" alt="">
+    </div>
+    <ion-card-header>
+      <ion-card-title>
+        {{ mensaje.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <label> Levels: </label>
+      <ion-chip *ngFor="let mk of mensaje.levels">
+        {{mk.level }}
+      </ion-chip>
+      <h4>Skill:</h4>
+      <ion-chip *ngFor="let ag of mensaje.skills">
+        {{ag.skill}}
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+

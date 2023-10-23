@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<div>
+  <ion-card-header id="titulo-login">
+    <br>
+    <ion-card-title>[҉//DuocQR</ion-card-title>
+    <img
+    src="https://www.duoc.cl/wp-content/themes/wordpress-duoc-cl/images/logo-duoc.svg"/>
+  </ion-card-header>
+</div>
+<ion-content>
+  <ion-card id="card-login">
+    <ion-card-content [formGroup]="loginForm">
+      <ion-item>
+        <ion-input #user [(ngModel)]="emailValue" formControlName="email" label="Ingrese Usuario:" labelPlacement="floating" placeholder="@profesor.duoc.cl or @duocuc.cl"></ion-input>
+      </ion-item>
+      <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
+        El correo es Incorrecto.
+      </ion-text>
+      <br>
+      <ion-item>
+        <ion-input #pass type="password" [(ngModel)]="passValue" formControlName="password" label="Ingrese Contraseña:" labelPlacement="floating" placeholder="************"></ion-input>
+      </ion-item>
+      <ion-text pasition="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
+        Min 6 caracteres y es Obligatoria la Contraseña.
+      </ion-text>
+      <ion-button id="boton-login" fill="clear" expand="block" (click)="login(user, pass)" [disabled]="!loginForm.valid">ENTRAR</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button >
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="book-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+

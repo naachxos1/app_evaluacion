@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>update</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #nombre [(ngModel)]="seccion.nombre" type="text" label="Nombre" labelPlacement="floating" placeholder="##"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input  [(ngModel)]="seccion.comentario" type="text" label="comentario" labelPlacement="floating" placeholder="##"></ion-input>
+      </ion-item>
+      <ion-button color="secondary" (click)="updateseccion()" >Actualizar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

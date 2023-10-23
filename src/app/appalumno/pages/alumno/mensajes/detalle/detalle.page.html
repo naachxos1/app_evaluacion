@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="textocentrado">detalle</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">{{ seccion.nombre }}</ion-card-title>
+      <ion-card-subtitle style="text-align: center;">seccion.</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: center;">
+      Contenido del Curso o seccion
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

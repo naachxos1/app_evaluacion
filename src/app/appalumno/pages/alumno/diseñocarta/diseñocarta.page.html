@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-card
+  *ngIf="dataapialumno">
+    <div
+    *ngFor="let o of dataapialumno.images">
+      <img src="{{o.href}}" alt="">
+    </div>
+    <ion-card-header>
+      <ion-card-title>
+        {{ dataapialumno.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <label> Levels: </label>
+      <ion-chip *ngFor="let p of dataapialumno.levels">
+        {{p.level }}
+      </ion-chip>
+      <h4>Skill:</h4>
+      <ion-chip *ngFor="let u of dataapialumno.skills">
+        {{u.skill}}
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
